@@ -1,0 +1,2 @@
+A C program starts with header files, then comes the main function where the program runs.
+We use comments to explain code, data types to define the type of data, and variables to store values.

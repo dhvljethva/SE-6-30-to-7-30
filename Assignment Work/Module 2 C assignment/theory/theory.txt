@@ -1,0 +1,415 @@
+1.Write an essay covering the history and evolution of C programming. Explain
+
+its importance and why it is still used today.
+C, developed by Dennis Ritchie in the early 1970s at Bell Labs, became foundational for systems programming and enabled the portability of Unix. Its efficiency, low-level control, and portability keep it vital today, especially in operating systems, embedded systems, and performance-critical software. Many modern languages and technologies are built on concepts introduced by C, ensuring its continued relevance.
+
+2.Install a C compiler on your system and configure the IDE. Write your first
+program to print "Hello, World!" and run it.
+installing GCC Compiler
+
+1.Windows: Install MinGW or TDM-GCC, then add the bin folder to the system PATH so gcc can run from the command line.
+
+2.Linux: Use the terminal and run: sudo apt install build-essential (Ubuntu) or the equivalent package for your distro.
+
+3.Mac: Install Xcode Command Line Tools using xcode-select --install to get gcc/clang.
+
+Setting Up an IDE
+
+Dev-C++: Download and install; it usually comes bundled with a GCC compiler—no extra setup needed.
+
+CodeBlocks: Choose the version with MinGW included, install, and the IDE auto-detects GCC.
+
+VS Code: Install the C/C++ extension, set up GCC or Clang separately, and configure a simple build task for compiling and running C programs.
+
+3.Write a C program that includes variables, constants, and comments. Declare
+and use different data types (int, char, float) and display their values.
+
+Basic Structure of a C Program
+
+1.Headers: Include libraries needed for functions.
+#include <stdio.h>   // for printf, scanf
+
+2.Main Function: Entry point of every C program.
+int main() {
+    // code
+    return 0;
+}
+
+3.Comments: Notes for the programmer; ignored by the compiler.
+// This is a single-line comment
+/* This is a multi-line comment */
+
+4.Data Types: Define the type of data used.
+Common types: int, float, char, double.
+
+5.Variables: Named storage locations with a data type.
+int age = 21;
+float price = 81.5;
+char grade = 'A';
+
+Example Program
+
+#include <stdio.h>
+
+int main() {                 // main function
+    int age = 21;            // variable (int type)
+    printf("Age = %d", age); // print output
+    return 0;
+}
+
+4.Write notes explaining each type of operator in C: arithmetic, relational,
+logical, assignment, increment/decrement, bitwise, and conditional operators.
+
+
+1. Arithmetic Operators :
+
+Used for mathematical operations.
+Operators: `+`, `-`, `*`, `/`, `%`
+Example: `a + b`, `x % y`
+
+2. Relational Operators:
+
+Used to compare two values; result is true (1) or false (0).
+Operators: `==`, `!=`, `>`, `<`, `>=`, `<=`
+Example: `a > b`
+
+3. Logical Operators:
+
+Used to combine conditions; return true or false.
+Operators: `&&` (AND), `||` (OR), `!` (NOT)
+Example: `a > 0 && b > 0`
+
+4. Assignment Operators:
+
+Used to assign values to variables.
+Operators: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
+Example: `x += 5` (x = x + 5)
+
+5. Increment/Decrement Operators:
+
+Increase or decrease value by 1.
+Operators: `++`, `--`
+Example:`i++`, `--j`
+
+6. Bitwise Operators:
+
+Perform operations on binary bits.
+Operators: `&`, `|`, `^`, `~`, `<<`, `>>`
+Example: `a & b`, `a << 1`
+
+5.Explain decision-making statements in C (if, else, nested if-else, switch).
+Provide examples of each.
+
+
+1. if Statement:
+
+Executes a block when a condition is true.
+
+
+if (a > 0) {
+    printf("Positive");
+}
+
+
+2. if-else Statement:
+
+Executes one block if true, another if false.
+
+
+if (age >= 18)
+    printf("Adult");
+else
+    printf("Minor");
+
+
+3. Nested if-else:
+
+An if-else inside another if-else.
+
+
+if (marks >= 90)
+    printf("Grade A");
+else if (marks >= 75)
+    printf("Grade B");
+else
+    printf("Grade C");
+
+
+4. switch Statement:
+
+Used when choosing from multiple fixed options.
+
+switch (day) {
+    case 1: printf("Monday"); break;
+    case 2: printf("Tuesday"); break;
+    default: printf("Invalid");
+}
+
+6.Compare and contrast while loops, for loops, and do-while loops. Explain the
+scenarios in which each loop is most appropriate.
+
+
+while Loop
+
+Checks condition first runs only if condition is true.
+Best when the number of iterations is unknown.
+
+
+while (i < 5) { ... }
+
+for Loop
+
+Combines initialization, condition, and update in one line.
+Best when the number of iterations is known or counted.
+
+for (i = 0; i < 5; i++) { ... }
+
+
+do-while Loop
+
+Runs at least once because condition is checked after the loop body.
+Best when you need the loop to run at least one time, such as menu-driven programs.
+
+
+do { ... } while (i < 5);
+
+7.Explain the use of break, continue, and goto statements in C. Provide
+examples of each.
+
+
+1. break
+
+Exits the nearest loop or `switch` immediately.
+
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) break; // loop stops when i = 3
+    printf("%d ", i);
+}
+
+
+ 2. continue
+
+Skips the current iteration and moves to the next loop cycle.
+
+
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) continue; // skips printing 3
+    printf("%d ", i);
+}
+
+
+3. goto
+
+Jumps to a labeled statement in the program.
+
+
+int i = 1;
+loop:
+printf("%d ", i);
+i++;
+if (i <= 5) goto loop;
+
+
+>> `goto` is generally discouraged because it can make code hard to read.
+
+8.What are functions in C? Explain function declaration, definition, and how to
+call a function. Provide examples.
+
+Functions in C
+
+A function is a block of code that performs a specific task and can be reused.
+
+1. Function Declaration (Prototype)
+
+Tells the compiler about the function’s name, return type, and parameters.
+
+int add(int, int);  // declaration
+
+
+2. Function Definition
+
+Contains the actual code of the function.
+
+
+int add(int a, int b) {  // definition
+    return a + b;
+}
+
+
+3. Function Call
+
+Invokes the function to perform its task.
+
+
+int result = add(5, 3);  // call
+printf("%d", result);    // output: 8
+
+
+>> Functions help in modular programming, code reusability, and easier debugging.
+
+9.Explain the concept of arrays in C. Differentiate between one-dimensional and
+multi-dimensional arrays with examples.
+
+Arrays in C
+
+An array is a collection of elements of the same data type stored in contiguous memory locations.
+Syntax: `data_type array_name[size];`
+
+
+1. One-Dimensional Array:
+
+Stores elements in a single row.
+Example:
+int numbers[5] = {1, 2, 3, 4, 5};
+
+2. Multi-Dimensional Array:
+
+Stores data in multiple rows and columns (like a matrix).
+Example (2D array):
+int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+
+10.Explain what pointers are in C and how they are declared and initialized. Why
+are pointers important in C?
+
+Pointers in C
+
+A pointer is a variable that stores the address of another variable.
+
+Declaration and Initialization
+
+int a = 10;      // normal variable
+int *ptr = &a;   // pointer storing address of a
+
+`*ptr` → value at the address
+`&a` → address of variable a
+
+----Importance of Pointers----
+
+1.Enable direct memory access
+2. Allow dynamic memory allocation
+3. Useful for arrays, strings, and functions (passing by reference)
+4. Essential in data structures like linked lists, trees, etc.
+
+11.Explain string handling functions like strlen(), strcpy(), strcat(),
+strcmp(), and strchr(). Provide examples of when these functions are
+useful.
+
+1. `strlen()`
+
+Returns the length of a string (excluding `\0`).
+
+
+char str[] = "Hello";
+int len = strlen(str); // len = 5
+
+Use: To find string size.
+
+2. `strcpy()`
+
+Copies one string to another.
+
+char src[] = "Hello";
+char dest[10];
+strcpy(dest, src); // dest = "Hello"
+
+Use: To duplicate strings.
+
+3. `strcat()`
+
+Concatenates (joins) two strings.
+
+char str1[20] = "Hello ";
+char str2[] = "World";
+strcat(str1, str2); // str1 = "Hello World"
+
+Use: To combine strings.
+
+4. `strcmp()`
+
+Compares two strings; returns 0 if equal.
+
+strcmp("abc", "abc"); // returns 0
+strcmp("abc", "xyz"); // returns <0
+```
+
+Use: To check string equality or order.
+
+5. `strchr()`
+
+Finds the first occurrence of a character in a string.
+
+char str[] = "Hello";
+char *ptr = strchr(str, 'l'); // points to first 'l'
+```
+
+Use: To locate a character in a string.
+
+12.Explain the concept of structures in C. Describe how to declare, initialize, and
+access structure members.
+
+Structures in C
+
+A structure is a user-defined data type that groups different types of variables under a single name.
+
+Declaration
+
+struct Student {
+    char name[50];
+    int age;
+    float marks;
+};
+
+
+Initialization
+
+struct Student s1 = {"Your name", 20, 85.5};
+
+
+Accessing Members
+
+printf("%s", s1.name);  // Access name
+s1.age = 21;            // Modify age
+```
+
+Use: Structures are useful for representing complex data like records, objects, or entities in a program.
+
+13.Explain the importance of file handling in C. Discuss how to perform file
+operations like opening, closing, reading, and writing files.
+
+
+Importance of File Handling
+
+File handling allows a program to store data permanently on disk, read/write data, and manage large amounts of information beyond program memory.
+
+
+File Operations in C
+
+1. Opening a File
+
+FILE *fp;
+fp = fopen("data.txt", "r"); // r=read, w=write, a=append
+
+2. Closing a File
+
+fclose(fp);
+
+
+3. Reading from a File
+
+char str[100];
+fgets(str, 100, fp);  // reads a line
+
+
+4. Writing to a File
+
+
+fprintf(fp, "Hello World\n"); // writes text to file
+
+
+Use: File handling is essential for data storage, logging, and persistent programs.
+
+
+
+
+
+

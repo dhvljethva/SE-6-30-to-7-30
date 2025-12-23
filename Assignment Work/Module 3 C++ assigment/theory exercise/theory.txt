@@ -1,0 +1,590 @@
+1.1 What are the key differences between Procedural Programming and Object-Oriented
+Programming (OOP)?
+Procedural Programming (POP) FUNCTION BASED
+
+1.Focuses on functions and procedures
+
+2.Data and functions are separate
+
+3.Follows a step-by-step approach
+
+4.Good for small programs
+
+Example: C, simple C++ programs without classes
+
+Object-Oriented Programming (OOP) OBJECT BASED
+
+1.Focuses on objects and classes
+
+2.Data and functions are together inside classes
+
+3.Supports concepts like Encapsulation, Inheritance, Polymorphism
+
+4.Good for large and complex programs
+
+Example: C++, Java, Python (OOP features)
+
+1.2 List and explain the main advantages of OOP over POP.
+
+Advantages of OOP over POP:
+
+1. Reusability
+2. Encapsulation
+3. Easy to Maintain
+4. Inheritance
+5. Better Organization
+6. Flexibility (Polymorphism)
+
+1.3 Explain the steps involved in setting up a C++ development environment.
+
+Steps to set up a C++ development environment :
+
+1.Install a C++ compiler – e.g., GCC (Linux), Clang (macOS), or MSVC via Visual Studio (Windows).
+2.Install an IDE or code editor – e.g., Visual Studio, VS Code, Code::Blocks, or CLion.
+3.Configure the compiler – ensure the compiler path is set in system environment variables (if needed).
+4.Set up build tools – optionally install CMake or Make for managing projects.
+5.Write and compile a test program – create a simple “Hello, World” program to verify everything works.
+
+1.4 What are the main input/output operations in C++? Provide examples.
+
+
+Main Input/Output operations in C++:
+
+1.Input: `cin` – used to take input from the user
+  int x;
+  cin >> x;
+  
+2.Output:`cout` – used to display output on the screen
+  cout << "Value of x is " << x;
+
+3.New line: `endl` or `\n` – used to move to a new line
+
+4.cout << "Hello" << endl;
+
+5.Header file: `<iostream>` – required for input/output operations
+  #include <iostream>
+ 
+2.1 What are the different data types available in C++? Explain with examples.
+
+Data Types in C++:
+
+1.Basic (Primitive) Data Types
+
+   `int` – stores integers
+     int a = 10;
+    
+   `float` – stores decimal numbers
+     float b = 5.5;
+     
+   `double` – stores large decimal numbers
+     double c = 12.345;
+    
+   `char` – stores a single character
+     char ch = 'A';
+
+2.Derived Data Types
+
+   `array`
+     int arr[3] = {1, 2, 3};
+     
+   `pointer`
+     int *p = &a;
+     
+
+3.User-Defined Data Types
+
+   `struct`
+    struct Student { int id; };
+     
+   `enum`
+     enum Day {Mon, Tue};
+     
+
+4.Void
+  
+  `void` – represents no value
+    void display();
+     
+2.2 Explain the difference between implicit and explicit type conversion in C++.
+
+Type Conversion in C++ :
+1.Implicit: Automatic by compiler.
+2.Explicit: Manual by programmer.
+
+
+1.Implicit Conversion (Type Casting):
+  
+   Automatically done by the compiler.
+   Example:
+   int a = 10;
+   float b = a;  // int automatically converted to float
+     
+
+2.Explicit Conversion (Type Casting):
+
+   Manually done by the programmer.
+   Uses cast operators like `(type)` or `static_cast<type>()`.
+   Example:
+   float x = 5.7;
+   int y = (int)x;  // float explicitly converted to int
+
+2.3 What are the different types of operators in C++? Provide examples of each.
+
+--> C++ operators are categorized into arithmetic, relational, logical, bitwise, assignment, increment/decrement, conditional, and others, each performing specific operations on data.
+
+
+Types of Operators in C++ (Short):
+
+1.Arithmetic Operators – Perform mathematical operations.
+
+   int a = 10, b = 5;
+   cout << a + b; // Addition
+   cout << a - b; // Subtraction
+   cout << a * b; // Multiplication
+   cout << a / b; // Division
+   cout << a % b; // Modulus
+   ```
+
+2.Relational Operators – Compare values and return `true` or `false`.
+
+   cout << (a > b);  // Greater than
+   cout << (a == b); // Equal to
+   cout << (a != b); // Not equal to
+   
+
+3.Logical Operators – Perform logical operations.
+
+   bool x = true, y = false;
+   cout << (x && y); // AND
+   cout << (x || y); // OR
+   cout << (!x);     // NOT
+   ```
+
+4.Bitwise Operators – Operate on bits of integers.
+
+   cout << (a & b); // AND
+   cout << (a | b); // OR
+   cout << (a ^ b); // XOR
+   cout << (~a);    // NOT
+   cout << (a << 1); // Left shift
+   cout << (a >> 1); // Right shift
+   
+
+5.Assignment Operators – Assign values to variables.
+
+   int c;
+   c = a;   // =
+   c += a;  // +=
+   c -= b;  // -=
+   
+
+6.Increment/Decrement Operators – Increase or decrease value by 1.
+
+   a++; // Post-increment
+   ++b; // Pre-increment
+   a--; // Post-decrement
+   --b; // Pre-decrement
+   
+
+7.Conditional (Ternary) Operator – Short form of `if-else`.
+
+   int max = (a > b) ? a : b;
+
+
+2.4 Explain the purpose and use of constants and literals in C++.
+
+--> Constants ensure important values remain unchanged.
+--> Literals  represent fixed values directly in the program for clarity and simplicity.
+
+
+Constants and Literals in C++:
+
+1.Constants:
+
+   Fixed values that cannot be changed  during program execution.
+   Declared using `const` keyword.
+   Example:
+   const int MAX = 100;
+     
+
+2. Literals:
+
+   Direct fixed values written in the code.
+   Can be of different types: integer, floating-point, character, string, boolean.
+   Examples:
+   10        // integer literal
+    3.14      // float literal
+    'A'       // character literal
+    "Hello"   // string literal
+
+
+3.1 What are conditional statements in C++? Explain the if-else and switch statements.
+
+if–else Statement
+
+The if–else statement checks a condition:
+
+If the condition is true, the if block runs
+
+Otherwise, the else block runs
+
+switch Statement
+
+The switch statement is used when there are multiple fixed choices.
+It checks a variable and executes the matching case.
+
+
+3.2 What is the difference between for, while, and do-while loops in C++?
+                                                                                    
+1.for loop:          Used when the number of iterations is known in advance.                     
+2.while loop:       Used when the number of iterations is not known and depends on a condition. 
+3.do–while loop:  Similar to `while`, but the loop **executes at least once.
+                    
+
+3.3 How are break and continue statements used in loops? Provide examples.
+--> break and continue are loop control statements used to change the normal flow of loops.
+
+break → exits the loop
+
+continue → skips current loop iteration
+
+1.break Statement:
+>Terminates the loop completely
+>Control moves outside the loop
+
+example:
+for (int i = 1; i <= 5; i++) {
+    if (i == 3)
+        break;
+    cout << i << " ";
+}
+ 
+output : 1 2 
+
+2.continue Statement
+>Skips the current iteration
+>Moves to the next iteration of the loop
+
+
+for (int i = 1; i <= 5; i++) {
+    if (i == 3)
+        continue;
+    cout << i << " ";
+}
+output: 1 2 4 5 
+
+
+3.4 Explain nested control structures with an example.
+
+Any control structure (loop or if-else) can be nested inside another.
+Nested control structures mean placing one control structure inside another, such as a loop inside a loop or an if inside a loop.
+They are used to handle more complex conditions or repeated patterns.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows = 4;
+
+    for (int i = 1; i <= rows; i++) {        // Outer loop → rows
+        for (int j = 1; j <= i; j++) {       // Inner loop → stars in a row
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+4.1 What is a function in C++? Explain the concept of function declaration, definition, and calling.
+
+A function in C++ is a block of code that performs a specific task. It helps make programs simple, reusable, and organized.
+
+1. Function Declaration
+
+Tells the compiler about the function name, return type, and parameters.
+
+int add(int, int);
+
+2. Function Definition
+
+Contains the actual code of the function.
+
+int add(int a, int b) {
+    return a + b;
+}
+
+ 3. Function Calling
+
+Uses the function in the program.
+
+int result = add(5, 3);
+
+
+Declaration --->Function info
+Definition ---> Function work
+Calling --->Using the function
+
+
+4.2 What is the scope of variables in C++? Differentiate between local and global scope.
+
+1.Local Scope:
+Variable declared inside a function or block
+Can be used only within that function or block
+
+2.Global Scope:
+Variable declared outside all functions
+Can be used anywhere in the program
+
+-->Scope helps control variable usage and avoid errors.
+
+4.3 Explain recursion in C++ with an example.
+
+Recursion is when a function calls itself to solve a problem.
+
+1.Base case – stops the recursion.
+2.Recursive call – function calls itself.
+
+EXAMPLE:
+int factorial(int n) {
+    if (n == 0)
+        return 1;          // Base case
+    else
+        return n * factorial(n - 1); // Recursive call
+}
+
+4.4 What are function prototypes in C++? Why are they used?
+A function prototype tells the compiler about a function before it is used.
+
+Why Are They Used?
+
+1.Let the compiler know function name, return type, and parameters
+2.Allow functions to be defined after main()
+3.Help avoid errors in function c
+
+
+5.1 What are arrays in C++? Explain the difference between single-dimensional and multi-dimensional arrays.
+
+Array: An array in C++ is a collection of multiple values of the same data type stored in contiguous memory locations and accessed using an index.
+
+Example: int marks[5] = {10, 20, 30, 40, 50};
+
+1.Single-Dimensional Array:
+
+1.Stores data in one row (list form)
+2.Uses one index
+3.Used to store simple lists (marks, numbers)
+
+Example: int a[3] = {1, 2, 3};
+
+2.Multi-Dimensional Array[2D array]:
+
+ Stores data in rows and columns (table form)
+Uses two or more indices
+Used for matrices or tables.
+
+Example: int b[2][2] = {{1, 2}, {3, 4}};
+
+
+5.2 Explain string handling in C++ with examples.
+
+>>String handling in C++ means working with text (characters).
+>>C++ mainly uses the string class.
+
+Example:
+string s = "Hello";
+cout << s.length();   // Length
+cout << s + " World"; // Join strings
+
+
+Common operations:
+
+Find length → `s.length()`
+Join strings → `+`
+Compare strings → `==`
+Access characters → `s[i]`
+
+In simple words: Strings are used to store and manipulate text in C++.
+
+
+5.3 How are arrays initialized in C++? Provide examples of both 1D and 2D arrays.
+
+Array initialization in C++ means assigning values to an array at the time of declaration.
+
+1D Array (Single-Dimensional): A 1D array stores values in a list.
+Example: int numbers[4] = {10, 20, 30, 40};
+
+ 2D Array (Two-Dimensional): A 2D array stores values in rows and columns (table form).
+Example:
+
+int matrix[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+1D array → list of values
+2D array → table of values
+
+5.4 Explain string operations and functions in C++.
+
+String Operations and Functions in C++ : In C++, strings are used to store and work with text. The `string` class makes string operations easy.
+
+Common String Operations & Functions:
+
+1. Declaring a String: string s = "Hello";
+2. Length of String: s.length();    //Returns number of characters
+3.Concatenation (Join Strings):
+string a = "Hi";
+string b = "There";
+cout << a + " " + b;   // Hi There
+
+4.Compare Strings:
+if (a == b)
+    cout << "Equal";
+
+5. Access Characters:
+cout << s[0];   // First character
+
+6.Input String:
+string name;
+cin >> name;        // Single word
+getline(cin, name); // Full line
+
+
+In Simple Words:
+
+1.Strings store text
+2.`length()` finds size
+3.`+` joins strings
+4.`==` compares strings
+5.`[]` accesses characters
+
+
+6.1 Explain the key concepts of Object-Oriented Programming (OOP).
+
+Object-Oriented Programming (OOP) is based on a few core concepts:
+
+Class: A plan or template (like a blueprint of a house).
+Object: A real thing made from the class (the actual house).
+Encapsulation: Keeping data safe inside the object.
+Abstraction: Showing only what is needed, hiding the rest.
+Inheritance: One class using features of another class.
+Polymorphism: Same action, different behavior.
+
+-->OOP helps us organize code in an easy and clean way.
+
+6.2 What are classes and objects in C++? Provide an example.
+
+Classes and Objects in C++:
+Class: A class is a blueprint or template. It defines what data (variables) and   actions (functions) an object will have.
+
+Object: An object is a real instance of a class. It uses the class to create something that works.
+
+Example:
+
+#include <iostream>
+using namespace std;
+
+// Class definition
+class Car 
+{
+public:
+    string brand;
+    int speed;
+
+    void showInfo() 
+{
+        cout << "Brand: " << brand << endl;
+        cout << "Speed: " << speed << " km/h" << endl;
+    }
+};
+
+int main()
+ {
+    // Object creation
+    Car myCar;
+
+    // Assign values
+    myCar.brand = "Toyota";
+    myCar.speed = 120;
+
+    // Call function
+    myCar.showInfo();
+
+    return 0;
+}
+
+6.3 What is inheritance in C++? Explain with an example.
+
+Inheritance means one class can use the properties and functions of another class.
+It helps reuse code and makes programs easier to manage.
+
+-->Parent (Base) class: The class being inherited from
+-->Child (Derived) class: The class that inherits
+
+
+
+ Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    void eat() {
+        cout << "Animal is eating" << endl;
+    }
+};
+
+6.4 What is encapsulation in C++? How is it achieved in classes? 
+
+Encapsulation means wrapping data and the functions that use it into one unit (class) and protecting the data from direct access.
+
+ It helps keep data safe and code well-organized.
+
+
+How Encapsulation is Achieved :
+
+Encapsulation is done by:
+
+1. Using a class
+2. Using access specifiers:
+
+      private → data hidden (default).
+      public → accessible from outside.
+      protected → accessible in derived classes.
+
+
+// Derived class
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog is barking" << endl;
+    }
+};
+
+int main() {
+    Dog d;
+
+    d.eat();   // From Animal class
+    d.bark();  // From Dog class
+
+    return 0;
+}
+
+*inheritance allows one class to use and extend another class’s features.*
+
+
+
+   
+
+
+   
+
+
+
+     
+
